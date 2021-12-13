@@ -1,0 +1,39 @@
+# For a detailed info on this file and supported fields, check out the below link:
+# https://github.com/ShreyashSaitwal/rush-cli/wiki/Metadata-File
+
+---
+name: BubbleTabBar
+description: BubbleTabBar is bottom navigation bar with customizable bubble like tabs.
+homepage: https://zainulhassan815.github.io/dreamers-lab-web/extensions/bubble-tabbar
+license: /LICENSE
+
+version:
+  number: auto
+  name: '1.0.0'
+
+authors:
+  - Zain Ul Hassan
+
+build:
+  release:
+    # Optimizes the extension on every release build.
+    optimize: true
+
+  kotlin:
+    enable: true
+
+  # If enabled, you will be able to use Java 8 language features in your extension.
+  desugar:
+    enable: true
+    desugar_deps: true
+
+assets:
+  # Extension icon. This can be a URL or a local image in 'assets' folder.
+  icon: icon.png
+  # Extension assets.
+  # other:
+  #   - my_awesome_asset.anything
+
+# Extension dependencies (JAR).
+deps:
+  - bubble-tabbar.jar

@@ -97,10 +97,11 @@ class BubbleTabBar(container: ComponentContainer) : AndroidNonvisibleComponent(c
                 "/storage/emulated/0/Kodular/assets/$file"
             }
         }
-        else -> context.getExternalFilesDir(null).toString() + "/AppInventor/assets/$file"
+        else -> context.getExternalFilesDir(null).toString() + "/assets/$file"
     }
 
-    @SimpleFunction(description = """
+    @SimpleFunction(
+        description = """
         Add a new menu item.
         
         id - A unique integer that is used to identify each menu item
@@ -108,7 +109,8 @@ class BubbleTabBar(container: ComponentContainer) : AndroidNonvisibleComponent(c
         enabled - Set whether the item is enable or not
         color - Background color for menu item
         checked - Set whether the item is checked or not
-    """)
+    """
+    )
     fun Add(id: Int, title: String, icon: String, enabled: Boolean, color: Int, checked: Boolean) {
         val drawable = getDrawable(form, icon)
         menuItems.add(
@@ -116,11 +118,13 @@ class BubbleTabBar(container: ComponentContainer) : AndroidNonvisibleComponent(c
         )
     }
 
-    @SimpleFunction(description = """
+    @SimpleFunction(
+        description = """
         Initialize TabBar in a view. Make sure to add all the menu items before initializing.
         
         layout - Any horizontal or vertical arrangement inside which you want to place TabBar
-    """)
+    """
+    )
     fun Initialize(layout: HVArrangement) {
         val viewGroup = layout.view as ViewGroup
         tabBar = TabBar(
@@ -137,31 +141,34 @@ class BubbleTabBar(container: ComponentContainer) : AndroidNonvisibleComponent(c
             )
         )
         tabBar?.setMenu(menuItems)
-        tabBar?.addBubbleListener { OnSelected(it)}
+        tabBar?.addBubbleListener { OnSelected(it) }
         viewGroup.addView(
             tabBar,
             ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         )
     }
 
-    @SimpleFunction(description = """
+    @SimpleFunction(
+        description = """
         Select item at position.
         
         id - A unique integer that is used to identify each menu item
-    """)
+    """
+    )
     fun Select(id: Int) {
-        tabBar?.setSelectedWithId(id,true)
+        tabBar?.setSelectedWithId(id, true)
     }
 
-    @SimpleEvent(description = """
+    @SimpleEvent(
+        description = """
         Event raised when menu item is selected.
         
         id - A unique integer that is used to identify each menu item
-    """)
+    """
+    )
     fun OnSelected(id: Int) {
         EventDispatcher.dispatchEvent(this, "OnSelected", id)
     }
-
 
 
     @DesignerProperty(

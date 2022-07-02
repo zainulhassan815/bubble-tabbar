@@ -4,7 +4,11 @@
       <root url="file://C:/Users/DreamersLab/AppData/Roaming/rush/dev-deps" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://C:/Users/DreamersLab/AppData/Roaming/rush/dev-deps/rush/runtime-sources.jar!/" />
+      <root url="jar://C:/Users/DreamersLab/AppData/Roaming/rush/dev-deps/rush/annotations-sources.jar!/" />
+      <root url="jar://C:/Users/DreamersLab/AppData/Roaming/rush/dev-deps/kotlin/kotlin-stdlib-sources.jar!/" />
+    </SOURCES>
     <jarDirectory url="file://C:/Users/DreamersLab/AppData/Roaming/rush/dev-deps" recursive="true" />
   </library>
 </component>
